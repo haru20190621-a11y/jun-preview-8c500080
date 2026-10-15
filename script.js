@@ -58,10 +58,16 @@
         return Math.min(it.offsetLeft - base, max);
       });
     }
+    var now = slider.querySelector('[data-slider-now]');
     function update() {
       var s = stops();
       btns[0].disabled = track.scrollLeft <= 2;
       btns[1].disabled = track.scrollLeft >= s[s.length - 1] - 2;
+      if (now) {
+        var i = 0;
+        s.forEach(function (left, k) { if (track.scrollLeft >= left - track.clientWidth / 2) { i = k; } });
+        now.textContent = String(i + 1);
+      }
     }
     function go(dir) {
       var s = stops();

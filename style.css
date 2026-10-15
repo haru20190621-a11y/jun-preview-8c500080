@@ -297,19 +297,23 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .gallery-top .btn{margin-top:32px}
 
 /* ---------- 横スワイプの写真（トップの店内） ---------- */
+/* 本文と同じ幅の枠に1枚ずつ表示。スワイプか矢印で次の1枚へ */
 .slider__track{
-  display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;
+  display:flex;overflow-x:auto;overscroll-behavior-x:contain;
   scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
-  padding:0 var(--pad);
-  padding-left:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
-  scroll-padding-left:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));
 }
 .slider__track::-webkit-scrollbar{display:none}
 .slider__track:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
-.slider__item{flex:0 0 auto;margin:0;scroll-snap-align:start}
-.slider__item img{height:clamp(280px,78vw,520px);width:auto;max-width:none;display:block}
+.slider__item{flex:0 0 100%;margin:0;scroll-snap-align:start;scroll-snap-stop:always}
+.slider__item img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+.slider__item--room img{object-position:center 62%}
 .slider__nav{display:flex;align-items:center;gap:10px;margin-top:16px}
 .slider__hint{margin:0 auto 0 0;font-size:.9rem;color:var(--ink-3);letter-spacing:.08em}
+.slider__count{margin:0 8px 0 0;font-family:var(--en);font-size:1.05rem;letter-spacing:.14em;color:var(--ink-2)}
+@media (min-width:860px){
+  .slider__item img{aspect-ratio:16/9}
+  .slider__item--room img{object-position:center 66%}
+}
 .slider__btn{
   appearance:none;width:44px;height:44px;border:1px solid var(--ink);background:transparent;color:var(--ink);
   font-size:1.1rem;line-height:1;cursor:pointer;transition:background-color .3s,color .3s;

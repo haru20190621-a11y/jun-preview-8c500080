@@ -45,6 +45,50 @@
     Array.prototype.forEach.call(document.querySelectorAll('img[loading="lazy"]'), function (img) { img.loading = 'eager'; });
   }
 
+  /* ---- 横スワイプの写真: 矢印ボタンで1枚ずつ送る（スマホは指でスワイプ） ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-slider]'), function (slider) {
+    var track = slider.querySelector('.slider__track');
+    var btns = slider.querySelectorAll('.slider__btn');
+    var items = track.querySelectorAll('.slider__item');
+    // 各写真の左端に合わせたときの scrollLeft（1枚目＝0）
+    function stops() {
+      var max = track.scrollWidth - track.clientWidth;
+      var base = items[0].offsetLeft;
+      return Array.prototype.map.call(items, function (it) {
+        return Math.min(it.offsetLeft - base, max);
+      });
+    }
+    function update() {
+      var s = stops();
+      btns[0].disabled = track.scrollLeft <= 2;
+      btns[1].disabled = track.scrollLeft >= s[s.length - 1] - 2;
+    }
+    function go(dir) {
+      var s = stops();
+      var x = track.scrollLeft;
+      var target = null;
+      s.forEach(function (left) {
+        if (dir > 0 && left > x + 4 && target === null) { target = left; }
+        if (dir < 0 && left < x - 4) { target = left; }
+      });
+      if (target === null) { return; }
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      track.scrollTo({ left: target, behavior: reduce ? 'auto' : 'smooth' });
+      // なめらかなスクロールが効かない環境では、その場で送る
+      setTimeout(function () {
+        if (Math.abs(track.scrollLeft - x) < 2) { track.scrollLeft = target; }
+        update();
+      }, 600);
+    }
+    Array.prototype.forEach.call(btns, function (b) {
+      b.addEventListener('click', function () { go(Number(b.getAttribute('data-dir'))); });
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  });
+
   /* ---- 予約フォーム: 入力内容をメール本文にしてメールソフトを開く ---- */
   var form = document.getElementById('rform');
   if (form) {

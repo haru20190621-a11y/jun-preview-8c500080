@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=10">
 <script>document.documentElement.className+=' js';</script>
 </head>
 <body class="page-index">
@@ -255,10 +255,18 @@
     <p class="sec-label">Gallery</p>
     <h2>店内</h2>
   </div>
-  <div class="mosaic reveal">
-    <figure class="h2"><img src="images/plant.jpg" width="1080" height="1180" alt="窓辺の観葉植物とレースのカーテン" loading="lazy"></figure>
-    <figure><img src="images/lanterns.jpg" width="840" height="520" alt="タイルの壁に灯るランプ" loading="lazy"></figure>
-    <figure><img src="images/shelf.jpg" width="1040" height="620" alt="化粧品の棚" loading="lazy"></figure>
+  <div class="slider reveal" data-slider>
+    <div class="slider__track" tabindex="0" role="region" aria-label="店内の写真。横にスワイプしてご覧いただけます">
+      <figure class="slider__item"><img src="images/room.jpg" width="1200" height="1600" alt="施術室。ブラウンのタオルを掛けたベッドと、化粧品の棚" loading="lazy"></figure>
+      <figure class="slider__item"><img src="images/lounge.jpg" width="1600" height="1200" alt="待合スペース。白いソファとラタンのテーブル" loading="lazy"></figure>
+      <figure class="slider__item"><img src="images/products.jpg" width="1600" height="955" alt="棚に並ぶスキンケア商品" loading="lazy"></figure>
+      <figure class="slider__item"><img src="images/wall.jpg" width="1600" height="1200" alt="プルメリアの絵とランプ、カウンターに並ぶ資格証" loading="lazy"></figure>
+    </div>
+    <div class="wrap slider__nav">
+      <p class="slider__hint">横にスワイプしてご覧ください</p>
+      <button class="slider__btn" type="button" data-dir="-1" aria-label="前の写真">&larr;</button>
+      <button class="slider__btn" type="button" data-dir="1" aria-label="次の写真">&rarr;</button>
+    </div>
   </div>
   <div class="wrap">
     <a class="btn" href="gallery.html">ギャラリーを見る</a>
@@ -362,6 +370,6 @@
   <a class="mbar__tel" href="tel:0000000000">電話する</a>
 </nav>
 
-<script src="script.js?v=8" defer></script>
+<script src="script.js?v=10" defer></script>
 </body>
 </html>

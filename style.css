@@ -448,9 +448,9 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .flow li p{font-size:1rem;color:var(--ink-2)}
 .flow__time{font-family:var(--sans);font-size:.86rem;color:var(--ink-3);letter-spacing:.14em;margin-left:12px;font-weight:400}
 .flow__fig img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.flow__fig--tall img{aspect-ratio:3/4;object-position:center 60%}
 @media (min-width:860px){
   .flow__in{grid-template-columns:6fr 5fr;gap:72px;align-items:start}
-  .flow__fig{position:sticky;top:calc(var(--head-h) + 24px)}
 }
 .hfaq .link-arrow{display:inline-block;margin-top:28px}
 
@@ -503,14 +503,14 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .gnav-in a{display:inline-block;padding:8px 0 2px;font-family:var(--en);letter-spacing:.12em;text-transform:uppercase;font-size:1rem;text-decoration:none;border-bottom:1px solid var(--ink);white-space:nowrap}
 .gcat{padding-top:clamp(48px,7vw,88px)}
 .gcat h2{font-size:1.4rem}
-.ggrid{display:grid;gap:14px}
-.ggrid figure{display:flex;flex-direction:column}
-.ggrid img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.ggrid .tall img{aspect-ratio:3/4}
-.ggrid .full{grid-column:1/-1}
-.ggrid .full img{aspect-ratio:16/9}
-@media (min-width:700px){
-  .ggrid{grid-template-columns:1fr 1fr;gap:20px}
+/* ギャラリーは正方形のタイルで揃える（スマホ2列・PC3列） */
+.ggrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ggrid figure{display:flex;flex-direction:column;margin:0}
+.ggrid img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.ggrid figcaption{margin-top:6px;font-size:.86rem}
+@media (min-width:860px){
+  .ggrid{grid-template-columns:repeat(3,1fr);gap:16px}
+  .ggrid--2{grid-template-columns:repeat(2,1fr)}
 }
 
 /* ---------- 予約ページ ---------- */

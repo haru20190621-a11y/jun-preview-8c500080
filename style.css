@@ -534,6 +534,32 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .rform .btn{justify-self:start}
 .rform__note{font-size:.92rem;color:var(--ink-3)}
 
+/* ---------- 季節・臨時休業の帯（オートサイトが season.json で出す） ---------- */
+.season{text-align:center;font-size:.95rem;line-height:1.6;padding:8px 16px;letter-spacing:.06em}
+
+/* ---------- コラム（オートサイトが毎週書く記事。中身は .blog の中に入る） ---------- */
+.blog .page{max-width:760px;margin-inline:auto;padding:clamp(48px,8vw,96px) var(--pad) 0}
+.blog .kicker{font-family:var(--en);font-size:.9rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin:0}
+.blog h1{font-size:clamp(1.6rem,4.6vw,2.4rem);line-height:1.6;margin:14px 0 0}
+.blog .date{display:block;margin-top:14px;font-family:var(--en);font-size:1rem;letter-spacing:.14em;color:var(--ink-3)}
+.blog .body{margin-top:clamp(32px,5vw,48px)}
+.blog .body h2{font-size:clamp(1.25rem,3.4vw,1.5rem);line-height:1.7;margin:2.4em 0 .8em;padding-top:1em;border-top:1px solid var(--line)}
+.blog .body h3{font-size:1.1rem;margin:2em 0 .6em}
+.blog .body p,.blog .body li{color:var(--ink-2)}
+.blog .body ul,.blog .body ol{margin:0 0 1.2em;padding-left:1.4em}
+.blog .body ul{list-style:disc}.blog .body ol{list-style:decimal}
+.blog .body a{text-decoration:underline}
+.blog .body img{margin:1.6em 0}
+.blog .back{display:inline-block;margin-top:56px;padding:8px 0;font-size:.95rem;letter-spacing:.12em;text-decoration:none;border-bottom:1px solid var(--ink)}
+.blog .list{margin-top:40px;border-top:1px solid var(--line)}
+.blog .list li{border-bottom:1px solid var(--line)}
+.blog .list a{display:block;padding:24px 0;text-decoration:none}
+.blog .list .kicker{display:block}
+.blog .list .t{display:block;font-family:var(--serif);font-size:clamp(1.1rem,3vw,1.3rem);line-height:1.7;letter-spacing:.06em;margin-top:6px}
+.blog .list .d{display:block;margin-top:6px;color:var(--ink-2);font-size:.95rem;line-height:1.9}
+.blog .list a:hover .t{text-decoration:underline}
+.blog .empty{margin-top:32px;color:var(--ink-3)}
+
 /* ---------- スクロール出現 ---------- */
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
 .js .reveal.on{opacity:1;transform:none}

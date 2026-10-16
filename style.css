@@ -193,7 +193,7 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
   .concept__in{grid-template-columns:5fr 6fr;gap:72px;align-items:center}
 }
 
-/* ---------- 濃色バンド ---------- */
+/* ---------- 濃色バンド（色の帯はページ最下部の「ご予約」1本だけ。途中の段には使わない） ---------- */
 .dark{background:var(--ink);color:var(--cream);padding-bottom:var(--gap);--accent:#cfa46a;--line:rgba(243,236,226,.22);--ink-3:rgba(243,236,226,.66);--ink-2:rgba(243,236,226,.82)}
 
 /* ---------- 罫線リスト ---------- */
@@ -335,7 +335,7 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 }
 
 /* ---------- Instagram ---------- */
-.ig{background:var(--bg2);padding-bottom:var(--gap);margin-top:var(--gap)}
+.ig{}
 .ig__in{text-align:center}
 .ig__in p{max-width:32em;margin-inline:auto}
 .ig .btn{margin-top:24px}

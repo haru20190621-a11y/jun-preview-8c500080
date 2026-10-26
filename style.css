@@ -52,7 +52,6 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .nowrap{white-space:nowrap}
 
 .wrap{padding-left:var(--pad);padding-right:var(--pad);max-width:var(--max);margin-inline:auto}
-.preview-note{padding-block:12px;font-size:16px;line-height:1.7;border-bottom:1px solid var(--line)}
 .sec{padding-top:var(--gap)}
 .sec-label{
   font-family:var(--en);font-size:.84rem;font-weight:500;letter-spacing:.35em;
@@ -365,7 +364,7 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 /* ---------- 予約CTAバンド ---------- */
 .cta{margin-top:var(--gap);padding:var(--gap) 0;text-align:center}
 .cta p{max-width:30em;margin-inline:auto}
-.cta__btns{display:grid;gap:12px;margin-top:36px;grid-template-columns:1fr 1fr}
+.cta__btns{display:grid;gap:12px;margin-top:36px;grid-template-columns:minmax(0,320px);justify-content:center}
 .cta__btns .btn{text-align:center;padding-left:14px;padding-right:14px;font-size:.9rem}
 @media (min-width:768px){
   .cta__btns{display:flex;justify-content:center;flex-wrap:wrap}
@@ -382,14 +381,13 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .foot__info a{text-decoration:none}
 .foot small{display:block;font-size:.86rem;color:var(--ink-3);line-height:1.8}
 
-/* ---------- モバイル固定バー「WEB予約｜電話する」 ---------- */
+/* ---------- モバイル固定バー「LINE で予約」（予約は公式LINEだけ） ---------- */
 .mbar{
   position:fixed;left:0;right:0;bottom:0;z-index:95;
-  display:grid;grid-template-columns:1fr 1fr;height:60px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr;height:60px;border-top:1px solid var(--line);
 }
 .mbar a{display:flex;align-items:center;justify-content:center;text-decoration:none;letter-spacing:.2em;font-size:1rem;font-weight:500}
 .mbar__web{background:var(--ink);color:var(--cream)}
-.mbar__tel{background:var(--bg);color:var(--ink);border-left:1px solid var(--line)}
 @media (min-width:1100px){
   .mbar{display:none}
 }
@@ -398,29 +396,28 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .phead{padding-top:clamp(40px,7vw,80px);padding-bottom:clamp(32px,5vw,56px);border-bottom:1px solid var(--line)}
 .phead h1{margin-bottom:18px}
 
-/* ---------- メニューページ ---------- */
-.quick__grid{display:grid;gap:10px}
-.quick__item{
-  display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:baseline;
-  padding:18px 20px;border:1px solid var(--ink);text-decoration:none;
-  transition:background-color .3s,color .3s;
+/* ---------- メニューページ（店主のメニュー表と同じ内容・同じ並び） ---------- */
+.mitems{display:grid;gap:clamp(40px,6vw,56px)}
+.mitem{display:grid;gap:22px;padding-bottom:clamp(40px,6vw,56px);border-bottom:1px solid var(--line)}
+.mitem__img{margin:0}
+.mitem__img img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.mitem__no{margin:0 0 6px;font-family:var(--en);font-size:1.05rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.mitem__no span{margin-right:.5em}
+.mitem h2{font-size:1.5rem;margin-bottom:14px}
+.mitem__time{display:inline-block;margin:0 0 16px;padding:4px 14px;background:var(--bg2);font-size:.94rem;letter-spacing:.06em}
+.mitem__sep{margin:0 .4em;color:var(--ink-3)}
+.mitem__desc{margin:0 0 10px}
+.mitem__flow{margin:0 0 20px;font-size:.94rem;color:var(--ink-3)}
+.mitem__price{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding-top:18px;border-top:1px solid var(--line)}
+.mitem__price p{margin:0}
+.mitem__reg{color:var(--ink-3)}
+.mitem__reg del{font-family:var(--serif);font-size:1.2rem}
+.mitem__first{padding:6px 18px;background:var(--ink);color:var(--cream)}
+.mitem__first strong{font-family:var(--serif);font-size:1.6rem;font-weight:600;letter-spacing:.04em;margin-left:.3em}
+.mitem small{font-size:.8rem}
+@media (min-width:700px){
+  .mitem{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
 }
-.quick__k{letter-spacing:.14em}
-.quick__t{font-size:.9rem;color:var(--ink-3);letter-spacing:.1em}
-.quick__p{font-family:var(--serif);font-size:1.5rem;letter-spacing:.04em}
-.quick__item:hover{background:var(--ink);color:var(--cream)}
-.quick__item:hover .quick__t{color:var(--cream-2)}
-@media (min-width:600px){
-  .quick__grid{grid-template-columns:repeat(2,1fr)}
-  .quick__item{grid-template-columns:1fr;gap:4px;padding:24px}
-  .quick__p{font-size:2rem;margin-top:6px}
-}
-@media (min-width:1000px){
-  .quick__grid{grid-template-columns:repeat(4,1fr)}
-}
-.mcat{padding-top:clamp(48px,7vw,80px)}
-.mcat h2{font-size:1.4rem;margin-bottom:8px}
-.mcat__desc{color:var(--ink-2);font-size:1rem;margin-bottom:22px}
 .plist{border-top:1px solid var(--line)}
 .plist li{display:grid;grid-template-columns:1fr auto;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .plist h3{font-size:1.05rem;margin-bottom:2px}
@@ -430,7 +427,6 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .plist__price{font-family:var(--serif);font-size:1.4rem;letter-spacing:.04em}
 .plist--first{border:1px solid var(--accent);padding:0 20px}
 .plist--first li:last-child{border-bottom:0}
-.pay .info{margin-top:8px}
 
 /* ---------- ヘッドスパページ ---------- */
 .about__in{display:grid;gap:40px}
@@ -520,9 +516,6 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .way h2{font-size:1.2rem;margin:0}
 .way p{font-size:1rem;color:var(--ink-2)}
 .way .btn{justify-self:start}
-@media (min-width:860px){
-  .ways{grid-template-columns:1fr 1fr;column-gap:56px}
-}
 .rform{max-width:640px;display:grid;gap:22px}
 .rform label{display:grid;gap:6px;font-size:.95rem;letter-spacing:.1em}
 .rform input,.rform select,.rform textarea{

@@ -414,6 +414,7 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .mitem small{font-size:.8rem}
 @media (min-width:700px){
   .mitem{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
+  .mitem--nophoto .mitem__body{grid-column:2}
 }
 .plist{border-top:1px solid var(--line)}
 .plist li{display:grid;grid-template-columns:1fr auto;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}

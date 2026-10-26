@@ -354,9 +354,6 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
   .access__in{grid-template-columns:1fr 1fr;gap:72px;align-items:start}
 }
 .route__in{display:grid;gap:48px}
-.route__list li{display:grid;grid-template-columns:2.6em 1fr;gap:8px;padding:14px 0;border-top:1px solid var(--line);align-items:baseline}
-.route__list li:last-child{border-bottom:1px solid var(--line)}
-.route__no{font-family:var(--en);font-size:1.05rem;letter-spacing:.2em;color:var(--accent)}
 @media (min-width:860px){
   .route__in{grid-template-columns:1fr 1fr;gap:72px}
 }
@@ -462,24 +459,6 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .faq summary::after{content:"+";font-family:var(--en);font-size:1.5rem;line-height:1;justify-self:end;transition:transform .3s}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq .a{padding:0 0 22px calc(2em + 12px);color:var(--ink-2);font-size:1rem}
-
-/* ---------- クーポン（チケット） ---------- */
-.tickets{display:grid;gap:18px}
-.ticket{border:1px solid var(--ink);display:grid;grid-template-columns:1fr}
-.ticket__main{padding:24px 24px 18px}
-.ticket__kind{font-family:var(--en);font-size:.8rem;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px}
-.ticket h2{font-size:1.25rem;margin-bottom:10px}
-.ticket p{font-size:1rem;color:var(--ink-2);margin:0}
-.ticket__price{border-top:1px dashed var(--ink);padding:16px 24px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.ticket__price del{color:var(--ink-3);font-size:.95rem}
-.ticket__price strong{font-family:var(--serif);font-weight:600;font-size:1.7rem;letter-spacing:.04em}
-.ticket__cond{padding:0 24px 18px;font-size:.92rem;color:var(--ink-3);line-height:1.8;margin:0}
-@media (min-width:760px){
-  .tickets{grid-template-columns:1fr 1fr;gap:24px}
-  .ticket{grid-template-columns:1fr 160px}
-  .ticket__price{border-top:0;border-left:1px dashed var(--ink);flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center}
-  .ticket__cond{grid-column:1/-1;border-top:1px solid var(--line);padding-top:12px}
-}
 
 /* ---------- お知らせ ---------- */
 .news{border-top:1px solid var(--line)}

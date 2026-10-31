@@ -412,6 +412,12 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .mitem__first{padding:6px 18px;background:var(--ink);color:var(--cream)}
 .mitem__first strong{font-family:var(--serif);font-size:1.6rem;font-weight:600;letter-spacing:.04em;margin-left:.3em}
 .mitem small{font-size:.8rem}
+.mitem__plans{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.mitem__plans li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.mitem__plans p{margin:0}
+.mitem__plan{font-family:var(--serif);font-size:1.05rem;font-weight:600}
+.mitem__plan-note{font-size:.86rem;color:var(--ink-3);margin-top:2px}
+.mitem__plan-price{flex:none;font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.04em}
 @media (min-width:700px){
   .mitem{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
   .mitem--nophoto .mitem__body{grid-column:2}

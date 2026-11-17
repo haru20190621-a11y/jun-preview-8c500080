@@ -350,8 +350,10 @@ figcaption{font-size:.88rem;color:var(--ink-3);margin-top:10px;letter-spacing:.0
 .access__fig img{aspect-ratio:4/3;object-fit:cover;width:100%}
 .access__fig--tall img{aspect-ratio:3/4}
 .access__fig--wide img{aspect-ratio:1470/640}
+.access__map{display:block;width:100%;aspect-ratio:4/3;border:0;margin-top:48px}
 @media (min-width:860px){
   .access__in{grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+  .access__map{aspect-ratio:21/9;margin-top:72px}
 }
 .route__in{display:grid;gap:48px}
 @media (min-width:860px){
